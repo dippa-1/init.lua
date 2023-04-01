@@ -117,6 +117,18 @@ require('lazy').setup({
             'stevearc/dressing.nvim', -- optional for vim.ui.select
         },
     },
-    { 'echasnovski/mini.surround' },
+    {
+        'echasnovski/mini.surround',
+        config = function(_, opts)
+            require('mini.surround').setup(opts)
+        end
+    },
+    {
+        "echasnovski/mini.pairs",
+        event = "VeryLazy",
+        config = function(_, opts)
+            require("mini.pairs").setup(opts)
+        end,
+    }
 })
 
