@@ -145,5 +145,6 @@ require('lazy').setup({
             require("mini.comment").setup(opts)
         end,
     },
+    { "github/copilot.vim", },
 })
 
