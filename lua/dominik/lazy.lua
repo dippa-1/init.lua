@@ -109,5 +109,13 @@ require('lazy').setup({
 	{ 'ThePrimeagen/harpoon' },
 	{ 'mbbill/undotree' },
 	{ 'tpope/vim-fugitive' },
+    {
+        'akinsho/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+    }
 })
 

@@ -1,6 +1,8 @@
 {
   "LuaSnip": { "branch": "master", "commit": "bc8ec05022743d3f08bda7a76c6bb5e9a9024581" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
+  "dressing.nvim": { "branch": "master", "commit": "5f44f829481640be0f96759c965ae22a3bcaf7ce" },
+  "flutter-tools.nvim": { "branch": "main", "commit": "a21326dfcbb74ad6a71b935c4cdd288091fbc0a7" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
   "lsp-zero.nvim": { "branch": "v2.x", "commit": "ea4c9511c94df9596c450036502b7ff43d40f816" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "b64fdede85fd5e0b720ce722919e0a9b95ed6547" },
