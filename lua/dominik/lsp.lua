@@ -19,12 +19,29 @@ lsp.configure('lua-language-server', {
     }
 })
 
+local has_words_before = function()
+    local line_nr, col_nr = unpack(vim.api.nvim_win_get_cursor(0))
+    local line = vim.api.nvim_buf_get_lines(0, line_nr - 1, line_nr, true)[1]
+    return col_nr ~= 0 and line:sub(col_nr, col_nr):match("%s") == nil
+end
+
+
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<Tab>'] = cmp.mapping({
+        i = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item(cmp_select)
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
+        end
+    }),
     ['<Enter>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping({
         i = function()
