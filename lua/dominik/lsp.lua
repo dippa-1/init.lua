@@ -8,17 +8,17 @@ lsp.ensure_installed({
 	'rust_analyzer',
 })
 
--- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
+-- -- Fix Undefined global 'vim'
+-- lsp.configure('lua-language-server', {
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = { 'vim' }
+--             }
+--         }
+--     }
+-- })
+--
 local has_words_before = function()
     local line_nr, col_nr = unpack(vim.api.nvim_win_get_cursor(0))
     local line = vim.api.nvim_buf_get_lines(0, line_nr - 1, line_nr, true)[1]
